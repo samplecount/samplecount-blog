@@ -4,7 +4,7 @@ import           Data.Monoid (mappend)
 import           Hakyll
 import           Text.Pandoc
 import qualified Data.Map as M
-import qualified Data.Map.Lazy as ML
+import qualified Data.HashMap.Lazy as ML
 import           GHC.Generics
 
 import           Control.Monad (zipWithM_)
@@ -35,6 +35,7 @@ data HaspotSetting = HaspotSetting {
 data HaspotBlogSetting = HaspotBlogSetting {
   title :: String,
   description:: String,
+  copyright :: String,
   root_url :: String,
   about_page_link :: String,
   banner_image_link :: String
@@ -177,7 +178,7 @@ postCtx =
 mathCtx :: Context a
 mathCtx = field "mathjax" $ \item -> do
   metadata <- getMetadata $ itemIdentifier item
-  return $ if "mathjax" `M.member` metadata
+  return $ if "mathjax" `ML.member` metadata
              then "<script type=\"text/javascript\" src=\"http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML\"></script>"
              else ""
 
@@ -199,6 +200,10 @@ blogCtx conf = field "blog_title" ( \item -> do
                  field "blog_description" ( \item -> do
                       metadata <- getMetadata $ itemIdentifier item
                       return $ description $ blog conf
+                      ) `mappend`
+                 field "blog_copyright" ( \item -> do
+                      metadata <- getMetadata $ itemIdentifier item
+                      return $ copyright $ blog conf
                       ) `mappend`
                  field "about_page_link" ( \item -> do
                       metadata <- getMetadata $ itemIdentifier item

@@ -22,14 +22,35 @@
         <link rel="canonical" href="">
         $mathjax$
     </head>
-    <body class="post-template">
+    <body class="post-template nav-closed">
+        <div class="nav">
+            <h3 class="nav-title">Menu</h3>
+            <a href="#" class="nav-close">
+                <span class="hidden">Close</span>
+            </a>
+            <ul>
+                <li role="presentation"><a href="/">Home</a></li>
+                <li role="presentation"><a href="/archive.html">Archive</a></li>
+                <li role="presentation"><a href="$about_page_link$">About</a></li>
+            </ul>
+            <a class="subscribe-button icon-feed" href="/rss/feed.xml">Subscribe</a>
+        </div>
+        <header class="site-head" style="background-image: url($banner_image_link$)">
+            <div class="vertical">
+                <div class="site-head-content inner">
+                    <h1 class="blog-title">$blog_title$</h1>
+                    <h2 class="blog-description">$blog_description$</h2>
+                </div>
+            </div>
+            <A HREF="/">
+            <nav class="main-nav overlay clearfix">
+                <a class="menu-button icon-menu" href="#"><span class="word">Menu</span></a>
+            </nav>
+            </A>
+        </header>
+
         <main class="content" role="main">
             <article class="post">
-                <header class="post-header">
-                    <a class="blog-logo" href="/">
-                            <span class="blog-title">$blog_title$</span>
-                    </a>
-                </header>
                     <span class="post-meta"><time datetime="$date$">$date$</time> </span>
 
                     <h1 class="post-title">$title$</h1>
@@ -41,12 +62,12 @@
                     <footer class="post-footer">
 
                         <section class="author">
-                            <h4>$author_name$</h4>
+                            <h4><a href="$about_page_link$">$author_name$</a></h4>
                             <p>$author_intro$</p>
                         </section>
 
                         <section class="share">
-                            <h4>Share this post</h4>
+                            <h4>Share this</h4>
                             <a class="icon-twitter" href="https://twitter.com/share?text=$title$&amp;url=$url$" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
                                 <span class="hidden">Twitter</span>
                             </a>
@@ -64,7 +85,7 @@
         <footer class="site-footer">
             <a class="subscribe icon-feed" href="/rss/feed.xml"><span class="tooltip">Subscribe!</span></a>
             <div class="inner">
-                 <section class="copyright">All content copyright <a href=""></a> © 2014 • All rights reserved.</section>
+                 <section class="copyright">$blog_copyright$</section>
             </div>
         </footer>
         <script src="/javascript/jquery.js"></script>

@@ -366,12 +366,12 @@ margin on the iframe, cause it breaks stuff. */
     position: relative;
     display: table;
     width: 100%;
-    height: 60%;
+    height: 20%;
     margin-bottom: 5rem;
     text-align: center;
     color: #fff;
-    background: #303538 no-repeat center center;
-    background-size: cover;
+    background: #ffffff no-repeat center center;
+    background-size: contain;
 }
 
 .menu-button {
@@ -412,7 +412,7 @@ margin on the iframe, cause it breaks stuff. */
 
 /* When the navigation is closed */
 .nav-closed .menu-button {
-    color: #fff;
+    color: #000;
     border-color: rgba(255, 255, 255, 0.6);
 }
 .nav-closed .menu-button:hover {
@@ -454,7 +454,7 @@ margin on the iframe, cause it breaks stuff. */
     right: 0;
     height: 70px;
     border: none;
-    background: linear-gradient(to bottom, rgba(0,0,0,0.2) 0%,rgba(0,0,0,0) 100%);
+/*    background: linear-gradient(to bottom, rgba(0,0,0,0.2) 0%,rgba(0,0,0,0) 100%);*/
 }
 
 .no-cover .main-nav.overlay {
@@ -498,6 +498,7 @@ body.nav-opened .nav-cover {
                         opacity 0.3s ease 0.7s;
             transition: transform 0.5s ease,
                         opacity 0.3s ease 0.7s;
+    font-family: 'Open Sans', sans-serif;
 }
 
 body.nav-closed .nav {
@@ -577,19 +578,6 @@ body.nav-opened .nav {
     list-style: none;
     counter-reset: item;
 }
-
-.nav li:before {
-    display: block;
-    float: right;
-    padding-right: 4%;
-    padding-left: 5px;
-    text-align: right;
-    font-size: 1.2rem;
-    vertical-align: bottom;
-    color: #B8B8B8;
-    content: counter(item, lower-roman);
-    counter-increment: item;
-}
 .nav li {
     margin: 0;
 }
@@ -603,22 +591,6 @@ body.nav-opened .nav {
     white-space: nowrap;
     text-overflow: ellipsis;
 }
-.nav li a:after {
-    display: inline-block;
-    content: " .......................................................";
-    color: rgba(255,255,255,0.2);
-    margin-left: 5px;
-}
-.nav .nav-current:before {
-    color: #fff;
-}
-.nav .nav-current a:after {
-    content: " ";
-    border-bottom: rgba(255,255,255,0.5) 1px solid;
-    width: 100%;
-    height: 1px;
-}
-
 .nav a:link,
 .nav a:visited {
     color: #B8B8B8;
@@ -845,6 +817,10 @@ body.nav-opened .nav {
     margin: 0;
 }
 
+.post-footer h4 a {
+    text-decoration: none;
+}
+
 .post-footer p {
     margin: 1rem 0;
     font-size: 1.4rem;
@@ -864,7 +840,7 @@ body.nav-opened .nav {
     position: absolute;
     top: 4rem;
     right: 0;
-    width: 140px;
+    width: 175px;
 }
 
 .post-footer .share a {

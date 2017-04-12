@@ -1,10 +1,11 @@
 author:
-    name: Paul Meng
-    email: mno2@mno2.org
-    intro: A Web developer, A Programming Language Theory Enthusiast, A Speech Processing Computer Scientist.
+    name: Samplecount
+    email: info@samplecount.com
+    intro: We are a bunch of highly experienced programming freaks, mobile addicts, user interface design nerds and sound design honks, located in Barcelona, Vienna and Berlin.
 blog:
-    root_url: http://blog.mno2.org/haspot
+    root_url: http://blog.samplecount.com/
     title: ""
     description: ""
-    about_page_link: http://paulme.ng
-    banner_image_link: images/haspot.svg
+    copyright: Copyright © 2017 • All rights reserved.
+    about_page_link: http://samplecount.com
+    banner_image_link: /images/samplecount.svg
